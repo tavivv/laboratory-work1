@@ -10,24 +10,28 @@
 <script>
 let number = prompt("Введите целое число:");
 let sub = number;
-let divisor;
+let divisor = 1;
 for (let i = 1; i <= number; i++ ){
-    while(sub >0){
-        sub = i;
+    sub = number;
+    console.log(i);
+    while(sub > 0){
+        sub -= i;
         if(sub == 0)
-        if(isPrime(i)){
-            divisor = i;
-        }
-        console.log(divisor)
+        if(isPrime(i))
+        divisor = i;
     }
 }
+console.log(divisor);
 function isPrime(i){
     let counter = 0;
     for(let j = 1; j <= i; j++){
-    sub = i;
-    if(sub == 0){
-        counter ++;
-    }}
+    let sub = i;
+    while(sub >0){
+        sub -= j;
+    if(sub == 0)
+    counter++;
+    }
+    }
     if(counter == 2) return true
     else return false
     }
